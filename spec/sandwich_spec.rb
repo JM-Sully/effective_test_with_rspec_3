@@ -1,10 +1,7 @@
 RSpec.describe 'An ideal sandwich' do
   Sandwich = Struct.new(:taste, :toppings)
 
-  # use a helper method, with memoization to create a new sandwich instance
-  def sandwich
-    @sandwich ||= Sandwich.new('delicious', [])
-  end
+  let(:sandwich) { Sandwich.new('delicious', []) }
 
   it 'is delicious' do
     taste = sandwich.taste
