@@ -1,18 +1,20 @@
 RSpec.describe 'An ideal sandwich' do
   Sandwich = Struct.new(:taste, :toppings)
 
-  # RSpec before hook, will run automatically before each example
-  before { @sandwich = Sandwich.new('delicious', []) }
+  # use a helper method, with memoization to create a new sandwich instance
+  def sandwich
+    @sandwich ||= Sandwich.new('delicious', [])
+  end
 
   it 'is delicious' do
-    taste = @sandwich.taste
+    taste = sandwich.taste
 
     expect(taste).to eq('delicious')
   end
 
   it 'lets me add toppings' do
-    @sandwich.toppings << 'red peppers'
-    toppings = @sandwich.toppings
+    sandwich.toppings << 'red peppers'
+    toppings = sandwich.toppings
 
     expect(toppings).not_to be_empty
   end
