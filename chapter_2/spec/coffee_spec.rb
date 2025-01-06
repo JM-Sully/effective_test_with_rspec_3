@@ -13,6 +13,12 @@ class Tea
   end
 end
 
+RSpec.configure do |config|
+  # the file where RSpec will store information about which examples are failing,
+  # or other returned based on other runtime options, so that it knows what to rerun
+  config.example_status_persistence_file_path = 'spec/examples.txt'
+end
+
 RSpec.describe 'A cup of tea' do
   let(:tea) { Tea.new }
 
