@@ -31,7 +31,7 @@ RSpec.describe 'A cup of tea' do
   end
 
   # use context to group together a set of examples and their setup code 
-  fcontext 'with oat milk' do
+  context 'with oat milk' do
     before { tea.add :oat_milk }
     
     it 'costs $1.25' do
