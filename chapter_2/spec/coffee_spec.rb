@@ -1,5 +1,8 @@
 # this class would typically be in its own file
 class Tea
+  BASE_PRICE = 1.00
+  OAT_MILK_PRICE = 0.25
+
   def ingredients
     @ingredients ||= []
   end
@@ -9,7 +12,7 @@ class Tea
   end
 
   def price
-    1.00
+    ingredients.include?(:oat_milk) ? BASE_PRICE + OAT_MILK_PRICE : BASE_PRICE
   end
 end
 
