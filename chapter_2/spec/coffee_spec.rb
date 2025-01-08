@@ -37,5 +37,16 @@ RSpec.describe 'A cup of tea' do
     it 'costs $1.25' do
       expect(tea.price).to eq(1.25)
     end
+
+    # add 'pending' to the block 
+    it 'is lighter in colour' do
+      pending 'Colour is not implemented yet'
+      expect(tea.colour.to be(:light))
+    end
+
+    it 'is cooler than 100 degrees Celsius' do
+      pending 'Temperature is not implented yet'
+      expect(tea.temperature).to be < 200.0
+    end
   end
 end
