@@ -14,6 +14,14 @@ class Tea
   def price
     ingredients.include?(:oat_milk) ? BASE_PRICE + OAT_MILK_PRICE : BASE_PRICE
   end
+
+  def colour
+    ingredients.include?(:oat_milk) ? :light : :black
+  end
+
+  def temperature
+    ingredients.include?(:oat_milk) ? 90.0 : 99.0
+  end
 end
 
 RSpec.configure do |config|
@@ -41,12 +49,12 @@ RSpec.describe 'A cup of tea' do
     # add 'pending' to the block 
     it 'is lighter in colour' do
       pending 'Colour is not implemented yet'
-      expect(tea.colour.to be(:light))
+      expect(tea.colour).to be(:light)
     end
 
     it 'is cooler than 100 degrees Celsius' do
       pending 'Temperature is not implented yet'
-      expect(tea.temperature).to be < 200.0
+      expect(tea.temperature).to be < 99.0
     end
   end
 end
