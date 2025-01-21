@@ -4,6 +4,10 @@ require 'byebug'
 
 module ExpenseTracker
   class API < Sinatra::Base
+    configure do
+      set :reload_templates, false
+    end
+
     def initialize
       @expenses = []
     end
