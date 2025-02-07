@@ -12,6 +12,7 @@ module ExpenseTracker
     end
 
     let (:ledger) { instance_double('ExpenseTracker::Ledger') }
+    let (:parsed) { JSON.parse(last_response.body)}
 
     context 'when the expense is successfully recorded' do
       let (:expense) { { 'some' => 'data' } }
@@ -25,7 +26,6 @@ module ExpenseTracker
       it 'returns the expense id' do
         post '/expenses', JSON.generate(expense)
 
-        parsed = JSON.parse(last_response.body)
         expect(parsed).to include('expense_id' => 417)
       end
 
@@ -47,7 +47,6 @@ module ExpenseTracker
       it 'returns an error message' do
         post '/expenses', JSON.generate(expense)
 
-        parsed = JSON.parse(last_response.body)
         expect(parsed).to include('error' => 'Expense Incomplete')
       end
 
