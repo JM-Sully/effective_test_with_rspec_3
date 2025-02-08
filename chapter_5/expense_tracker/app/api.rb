@@ -24,14 +24,11 @@ module ExpenseTracker
       end
     end
 
-    class API < Sinatra::Base
-      post '/expenses' do
-        JSON.generate('expense_id' => 42)
-      end
+    get '/expenses/:date' do
+      date = params[:date]
+      expenses_on_date = @ledger.expenses_on(date)
 
-      get '/expenses/:date' do
-        JSON.generate([])
-      end
+      JSON.generate(expenses_on_date)
     end
   end
 end
