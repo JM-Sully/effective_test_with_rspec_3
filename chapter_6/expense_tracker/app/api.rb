@@ -11,6 +11,7 @@ module ExpenseTracker
     end
 
     post '/expenses' do
+      request.body.rewind
       expense = JSON.parse(request.body.read)
       result = @ledger.record(expense)
 
