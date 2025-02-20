@@ -1,12 +1,16 @@
 require_relative '../config/sequel'
+require 'byebug'
 
 module ExpenseTracker
   RecordResult = Struct.new(:success?, :expense_id, :error_message)
 
   class Ledger
     def record(expense)
-      unless expense.key?('payee')
-        message = 'Invalid expense: `payee` is required'
+      required_keys = ['payee', 'amount', 'date']
+      missing_keys = required_keys - expense.keys
+
+      unless missing_keys.empty?
+        message = "Invalid expense, missing: #{missing_keys.join(', ')}"
         return RecordResult.new(false, nil, message)
       end
 

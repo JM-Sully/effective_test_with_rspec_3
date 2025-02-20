@@ -26,16 +26,32 @@ module ExpenseTracker
         )]
       end
 
-      it 'rejects the expense as invalid' do
-        expense.delete('payee')
+      context 'when one of the keys is missing' do
+        it 'rejects the expense as invalid' do
+          expense.delete('payee')
 
-        result = ledger.record(expense)
+          result = ledger.record(expense)
 
-        expect(result).not_to be_success
-        expect(result.expense_id).to eq(nil)
-        expect(result.error_message).to include('`payee` is required')
+          expect(result).not_to be_success
+          expect(result.expense_id).to eq(nil)
+          expect(result.error_message).to include('Invalid expense, missing: payee')
 
-        expect(DB[:expenses].count).to eq(0)
+          expect(DB[:expenses].count).to eq(0)
+        end
+      end
+
+      context 'when multiple keys are missing' do
+        it 'rejects the expense as invalid' do
+          expense = {}
+
+          result = ledger.record(expense)
+
+          expect(result).not_to be_success
+          expect(result.expense_id).to eq(nil)
+          expect(result.error_message).to include('Invalid expense, missing: payee, amount, date')
+
+          expect(DB[:expenses].count).to eq(0)
+        end
       end
     end
 
