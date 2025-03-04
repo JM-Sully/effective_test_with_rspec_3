@@ -11,9 +11,11 @@ module ExpenseTracker
     end
   end
 
-  RSpec.describe 'Expense Tracker API', :db do
-    include APIHelpers
+  RSpec.configure do |config|
+    config.include APIHelpers
+  end
 
+  RSpec.describe 'Expense Tracker API', :db do
     def post_expense(expense)
       post '/expenses', JSON.generate(expense)
       expect(last_response.status).to eq(200)
