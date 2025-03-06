@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.8.7)
+      public_suffix (>= 2.0.2, < 7.0)
     base64 (0.2.0)
     bigdecimal (3.1.9)
     byebug (11.1.3)
@@ -14,6 +16,7 @@ GEM
     pry (0.15.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
+    public_suffix (6.0.1)
     rack (3.1.8)
     rack-protection (4.1.1)
       base64 (>= 0.1.0)
@@ -60,6 +63,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  addressable
   byebug
   coderay
   pry
