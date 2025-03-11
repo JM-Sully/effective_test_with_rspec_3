@@ -107,4 +107,8 @@ RSpec.configure do |config|
     require 'pry'
     binding.pry
   end
+
+  config.define_derived_metadata(file_path: /spec\/unit/) do |meta|
+    meta[:fast] = true
+  end
 end
