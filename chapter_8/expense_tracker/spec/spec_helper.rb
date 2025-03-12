@@ -115,4 +115,6 @@ RSpec.configure do |config|
   config.define_derived_metadata(type: :model) do |meta|
     meta[:models] = true
   end
+
+  config.filter_run_when_matching :jruby_only unless RUBY_PLATFORM == 'java'
 end
