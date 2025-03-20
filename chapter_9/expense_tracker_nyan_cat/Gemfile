@@ -1,0 +1,16 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+gem 'rspec'
+gem 'coderay'
+gem 'rack-test'
+gem 'sinatra'
+gem 'byebug'
+gem 'rackup'
+gem 'webrick'
+gem 'sequel'
+gem 'sqlite3'
+gem 'pry'
+gem 'addressable'
+gem 'nyan-cat-formatter'

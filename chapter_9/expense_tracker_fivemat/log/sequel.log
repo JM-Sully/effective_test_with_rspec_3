@@ -1,0 +1,711 @@
+# Logfile created on 2025-03-13 09:19:44 +0000 by logger.rb/v1.6.5
+I, [2025-03-13T09:19:44.954405 #23521]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-13T09:19:44.954500 #23521]  INFO -- : (0.000014s) BEGIN
+I, [2025-03-13T09:19:44.954675 #23521]  INFO -- : (0.000064s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-13T09:19:44.955055 #23521]  INFO -- : (0.000020s) ROLLBACK
+I, [2025-03-13T09:19:44.955112 #23521]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-13T09:19:44.955303 #23521]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-13T09:19:44.955338 #23521]  INFO -- : (0.000006s) BEGIN
+I, [2025-03-13T09:19:44.955727 #23521]  INFO -- : (0.000306s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-13T09:19:44.955855 #23521]  INFO -- : (0.000043s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-13T09:19:44.955908 #23521]  INFO -- : (0.000010s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-13T09:19:44.955960 #23521]  INFO -- : (0.000013s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-13T09:19:44.956000 #23521]  INFO -- : (0.000007s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-11')
+I, [2025-03-13T09:19:44.956079 #23521]  INFO -- : (0.000011s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-13T09:19:44.956248 #23521]  INFO -- : (0.000127s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-13T09:19:44.957948 #23521]  INFO -- : (0.000214s) ROLLBACK
+I, [2025-03-13T09:19:44.957971 #23521]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-13T09:19:44.958105 #23521]  INFO -- : Starting example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-13T09:19:44.958132 #23521]  INFO -- : (0.000006s) BEGIN
+I, [2025-03-13T09:19:44.958340 #23521]  INFO -- : (0.000157s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-13T09:19:44.958380 #23521]  INFO -- : (0.000015s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-13T09:19:44.959208 #23521]  INFO -- : (0.000028s) SELECT * FROM `expenses`
+I, [2025-03-13T09:19:44.959725 #23521]  INFO -- : (0.000173s) ROLLBACK
+I, [2025-03-13T09:19:44.959746 #23521]  INFO -- : Ending example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-13T09:19:44.959861 #23521]  INFO -- : Starting example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-13T09:19:44.959886 #23521]  INFO -- : (0.000005s) BEGIN
+I, [2025-03-13T09:19:44.959977 #23521]  INFO -- : (0.000021s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-13T09:19:44.960010 #23521]  INFO -- : (0.000005s) ROLLBACK
+I, [2025-03-13T09:19:44.960025 #23521]  INFO -- : Ending example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-13T09:19:44.960123 #23521]  INFO -- : Starting example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-13T09:19:44.960144 #23521]  INFO -- : (0.000004s) BEGIN
+I, [2025-03-13T09:19:44.960199 #23521]  INFO -- : (0.000016s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-13T09:19:44.960230 #23521]  INFO -- : (0.000005s) ROLLBACK
+I, [2025-03-13T09:19:44.960245 #23521]  INFO -- : Ending example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-13T09:23:02.355718 #23813]  INFO -- : Starting example: 
+I, [2025-03-13T09:23:14.777019 #23931]  INFO -- : Starting example: 
+I, [2025-03-13T09:23:16.966133 #23931]  INFO -- : (0.000032s) BEGIN
+I, [2025-03-13T09:23:16.966925 #23931]  INFO -- : (0.000532s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-13T09:23:16.967093 #23931]  INFO -- : (0.000061s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-13T09:23:16.971862 #23931]  INFO -- : (0.000570s) SELECT * FROM `expenses`
+I, [2025-03-13T09:23:16.975343 #23931]  INFO -- : (0.000318s) ROLLBACK
+I, [2025-03-13T09:23:16.975417 #23931]  INFO -- : Ending example: 
+I, [2025-03-13T09:23:16.975790 #23931]  INFO -- : Starting example: 
+I, [2025-03-13T09:23:22.165625 #23993]  INFO -- : Starting example: 
+I, [2025-03-14T10:11:12.462433 #23354]  INFO -- : Starting example: 
+I, [2025-03-14T10:12:29.488415 #23644]  INFO -- : Starting example: Expense Tracker API records submitted expenses
+I, [2025-03-14T10:12:29.488733 #23644]  INFO -- : (0.000020s) BEGIN
+I, [2025-03-14T10:12:29.489458 #23644]  INFO -- : (0.000347s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-14T10:12:29.489565 #23644]  INFO -- : (0.000040s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-14T10:12:29.490071 #23644]  INFO -- : (0.000010s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Zoo', 15.25, '2017-06-10')
+I, [2025-03-14T10:12:29.490128 #23644]  INFO -- : (0.000014s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-14T10:12:29.490279 #23644]  INFO -- : (0.000007s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Whole Foods', 95.2, '2017-06-11')
+I, [2025-03-14T10:12:29.490355 #23644]  INFO -- : (0.000012s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-14T10:12:29.490730 #23644]  INFO -- : (0.000211s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-14T10:12:29.491992 #23644]  INFO -- : (0.000214s) ROLLBACK
+I, [2025-03-14T10:12:29.492043 #23644]  INFO -- : Ending example: Expense Tracker API records submitted expenses
+I, [2025-03-14T10:12:29.493103 #23644]  INFO -- : Starting example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-14T10:12:29.493170 #23644]  INFO -- : (0.000011s) BEGIN
+I, [2025-03-14T10:12:29.493497 #23644]  INFO -- : (0.000196s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-14T10:12:29.493570 #23644]  INFO -- : (0.000043s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-14T10:12:29.495214 #23644]  INFO -- : (0.000060s) SELECT * FROM `expenses`
+I, [2025-03-14T10:12:29.496087 #23644]  INFO -- : (0.000198s) ROLLBACK
+I, [2025-03-14T10:12:29.496120 #23644]  INFO -- : Ending example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-14T10:12:29.496306 #23644]  INFO -- : Starting example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-14T10:12:29.496341 #23644]  INFO -- : (0.000006s) BEGIN
+I, [2025-03-14T10:12:29.496538 #23644]  INFO -- : (0.000035s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-14T10:12:29.496580 #23644]  INFO -- : (0.000007s) ROLLBACK
+I, [2025-03-14T10:12:29.496600 #23644]  INFO -- : Ending example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-14T10:12:29.496724 #23644]  INFO -- : Starting example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-14T10:12:29.496754 #23644]  INFO -- : (0.000005s) BEGIN
+I, [2025-03-14T10:12:29.496862 #23644]  INFO -- : (0.000020s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-14T10:12:29.496903 #23644]  INFO -- : (0.000005s) ROLLBACK
+I, [2025-03-14T10:12:29.496925 #23644]  INFO -- : Ending example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-14T10:12:29.497044 #23644]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-14T10:12:29.497072 #23644]  INFO -- : (0.000004s) BEGIN
+I, [2025-03-14T10:12:29.497188 #23644]  INFO -- : (0.000028s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-14T10:12:29.497222 #23644]  INFO -- : (0.000005s) ROLLBACK
+I, [2025-03-14T10:12:29.497240 #23644]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-14T10:12:29.497317 #23644]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-14T10:12:29.497341 #23644]  INFO -- : (0.000004s) BEGIN
+I, [2025-03-14T10:12:29.497589 #23644]  INFO -- : (0.000174s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-14T10:12:29.497630 #23644]  INFO -- : (0.000016s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-14T10:12:29.497672 #23644]  INFO -- : (0.000008s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-14T10:12:29.497704 #23644]  INFO -- : (0.000012s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-14T10:12:29.497741 #23644]  INFO -- : (0.000006s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-11')
+I, [2025-03-14T10:12:29.497772 #23644]  INFO -- : (0.000014s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-14T10:12:29.497836 #23644]  INFO -- : (0.000028s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-14T10:12:29.498035 #23644]  INFO -- : (0.000132s) ROLLBACK
+I, [2025-03-14T10:12:29.498051 #23644]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:25:56.294486 #15648]  INFO -- : Starting example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:25:56.294628 #15648]  INFO -- : (0.000026s) BEGIN
+I, [2025-03-19T08:25:56.296085 #15648]  INFO -- : (0.000294s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:25:56.296279 #15648]  INFO -- : (0.000053s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:25:56.300772 #15648]  INFO -- : (0.000032s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Zoo', 15.25, '2017-06-10')
+I, [2025-03-19T08:25:56.300893 #15648]  INFO -- : (0.000029s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:25:56.301076 #15648]  INFO -- : (0.000009s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Whole Foods', 95.2, '2017-06-11')
+I, [2025-03-19T08:25:56.301161 #15648]  INFO -- : (0.000014s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:25:56.302483 #15648]  INFO -- : (0.000971s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:25:56.303929 #15648]  INFO -- : (0.000280s) ROLLBACK
+I, [2025-03-19T08:25:56.303968 #15648]  INFO -- : Ending example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:25:56.305053 #15648]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:25:56.305116 #15648]  INFO -- : (0.000010s) BEGIN
+I, [2025-03-19T08:25:56.305313 #15648]  INFO -- : (0.000043s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:25:56.305383 #15648]  INFO -- : (0.000008s) ROLLBACK
+I, [2025-03-19T08:25:56.305404 #15648]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:25:56.305515 #15648]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:25:56.305544 #15648]  INFO -- : (0.000006s) BEGIN
+I, [2025-03-19T08:25:56.305843 #15648]  INFO -- : (0.000201s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:25:56.305879 #15648]  INFO -- : (0.000015s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:25:56.308205 #15648]  INFO -- : (0.000020s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:25:56.308298 #15648]  INFO -- : (0.000022s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:25:56.308341 #15648]  INFO -- : (0.000006s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-11')
+I, [2025-03-19T08:25:56.308370 #15648]  INFO -- : (0.000010s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:25:56.308446 #15648]  INFO -- : (0.000042s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:25:56.308777 #15648]  INFO -- : (0.000237s) ROLLBACK
+I, [2025-03-19T08:25:56.308796 #15648]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:25:56.308926 #15648]  INFO -- : Starting example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:25:56.308957 #15648]  INFO -- : (0.000005s) BEGIN
+I, [2025-03-19T08:25:56.309197 #15648]  INFO -- : (0.000160s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:25:56.309227 #15648]  INFO -- : (0.000011s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:25:56.310617 #15648]  INFO -- : (0.000035s) SELECT * FROM `expenses`
+I, [2025-03-19T08:25:56.311720 #15648]  INFO -- : (0.000335s) ROLLBACK
+I, [2025-03-19T08:25:56.311769 #15648]  INFO -- : Ending example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:25:56.311989 #15648]  INFO -- : Starting example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:25:56.312036 #15648]  INFO -- : (0.000007s) BEGIN
+I, [2025-03-19T08:25:56.312216 #15648]  INFO -- : (0.000029s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:25:56.312257 #15648]  INFO -- : (0.000007s) ROLLBACK
+I, [2025-03-19T08:25:56.312278 #15648]  INFO -- : Ending example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:25:56.312578 #15648]  INFO -- : Starting example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:25:56.312608 #15648]  INFO -- : (0.000005s) BEGIN
+I, [2025-03-19T08:25:56.312714 #15648]  INFO -- : (0.000022s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:25:56.312752 #15648]  INFO -- : (0.000005s) ROLLBACK
+I, [2025-03-19T08:25:56.312768 #15648]  INFO -- : Ending example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:26:49.781171 #15792]  INFO -- : Starting example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:26:49.781256 #15792]  INFO -- : (0.000010s) BEGIN
+I, [2025-03-19T08:26:49.790160 #15792]  INFO -- : (0.000308s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:26:49.790433 #15792]  INFO -- : (0.000037s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:26:49.793436 #15792]  INFO -- : (0.000030s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Zoo', 15.25, '2017-06-10')
+I, [2025-03-19T08:26:49.793567 #15792]  INFO -- : (0.000034s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:26:49.793775 #15792]  INFO -- : (0.000013s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Whole Foods', 95.2, '2017-06-11')
+I, [2025-03-19T08:26:49.793866 #15792]  INFO -- : (0.000014s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:26:49.794643 #15792]  INFO -- : (0.000158s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:26:49.795959 #15792]  INFO -- : (0.000320s) ROLLBACK
+I, [2025-03-19T08:26:49.795987 #15792]  INFO -- : Ending example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:26:49.796867 #15792]  INFO -- : Starting example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:26:49.796917 #15792]  INFO -- : (0.000007s) BEGIN
+I, [2025-03-19T08:26:49.797244 #15792]  INFO -- : (0.000195s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:26:49.797292 #15792]  INFO -- : (0.000023s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:26:49.798179 #15792]  INFO -- : (0.000033s) SELECT * FROM `expenses`
+I, [2025-03-19T08:26:49.798897 #15792]  INFO -- : (0.000193s) ROLLBACK
+I, [2025-03-19T08:26:49.798916 #15792]  INFO -- : Ending example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:26:49.799050 #15792]  INFO -- : Starting example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:26:49.799081 #15792]  INFO -- : (0.000009s) BEGIN
+I, [2025-03-19T08:26:49.799249 #15792]  INFO -- : (0.000025s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:26:49.799285 #15792]  INFO -- : (0.000006s) ROLLBACK
+I, [2025-03-19T08:26:49.799303 #15792]  INFO -- : Ending example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:26:49.799413 #15792]  INFO -- : Starting example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:26:49.799438 #15792]  INFO -- : (0.000004s) BEGIN
+I, [2025-03-19T08:26:49.799535 #15792]  INFO -- : (0.000017s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:26:49.799565 #15792]  INFO -- : (0.000005s) ROLLBACK
+I, [2025-03-19T08:26:49.799583 #15792]  INFO -- : Ending example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:26:49.799697 #15792]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:26:49.799722 #15792]  INFO -- : (0.000004s) BEGIN
+I, [2025-03-19T08:26:49.799831 #15792]  INFO -- : (0.000028s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:26:49.799870 #15792]  INFO -- : (0.000005s) ROLLBACK
+I, [2025-03-19T08:26:49.799888 #15792]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:26:49.799960 #15792]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:26:49.799984 #15792]  INFO -- : (0.000004s) BEGIN
+I, [2025-03-19T08:26:49.800187 #15792]  INFO -- : (0.000128s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:26:49.800223 #15792]  INFO -- : (0.000013s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:26:49.800264 #15792]  INFO -- : (0.000011s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:26:49.800294 #15792]  INFO -- : (0.000012s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:26:49.800329 #15792]  INFO -- : (0.000006s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-11')
+I, [2025-03-19T08:26:49.800361 #15792]  INFO -- : (0.000013s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:26:49.800428 #15792]  INFO -- : (0.000030s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:26:49.800678 #15792]  INFO -- : (0.000187s) ROLLBACK
+I, [2025-03-19T08:26:49.800705 #15792]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:27:24.066538 #15901]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:27:24.066671 #15901]  INFO -- : (0.000033s) BEGIN
+I, [2025-03-19T08:27:24.066862 #15901]  INFO -- : (0.000064s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:27:24.066915 #15901]  INFO -- : (0.000008s) ROLLBACK
+I, [2025-03-19T08:27:24.066957 #15901]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:27:24.067039 #15901]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:27:24.067064 #15901]  INFO -- : (0.000005s) BEGIN
+I, [2025-03-19T08:27:24.067357 #15901]  INFO -- : (0.000200s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:27:24.067449 #15901]  INFO -- : (0.000025s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:27:24.067676 #15901]  INFO -- : (0.000009s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:27:24.067731 #15901]  INFO -- : (0.000013s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:27:24.067766 #15901]  INFO -- : (0.000006s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-11')
+I, [2025-03-19T08:27:24.067834 #15901]  INFO -- : (0.000011s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:27:24.067999 #15901]  INFO -- : (0.000136s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:27:24.068992 #15901]  INFO -- : (0.000276s) ROLLBACK
+I, [2025-03-19T08:27:24.069015 #15901]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:27:24.069140 #15901]  INFO -- : Starting example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:27:24.069166 #15901]  INFO -- : (0.000006s) BEGIN
+I, [2025-03-19T08:27:24.069391 #15901]  INFO -- : (0.000147s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:27:24.069427 #15901]  INFO -- : (0.000016s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:27:24.070331 #15901]  INFO -- : (0.000025s) SELECT * FROM `expenses`
+I, [2025-03-19T08:27:24.071103 #15901]  INFO -- : (0.000256s) ROLLBACK
+I, [2025-03-19T08:27:24.071139 #15901]  INFO -- : Ending example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:27:24.071298 #15901]  INFO -- : Starting example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:27:24.071334 #15901]  INFO -- : (0.000007s) BEGIN
+I, [2025-03-19T08:27:24.071526 #15901]  INFO -- : (0.000038s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:27:24.071570 #15901]  INFO -- : (0.000007s) ROLLBACK
+I, [2025-03-19T08:27:24.071591 #15901]  INFO -- : Ending example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:27:24.071710 #15901]  INFO -- : Starting example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:27:24.071736 #15901]  INFO -- : (0.000005s) BEGIN
+I, [2025-03-19T08:27:24.071848 #15901]  INFO -- : (0.000022s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:27:24.071882 #15901]  INFO -- : (0.000006s) ROLLBACK
+I, [2025-03-19T08:27:24.071898 #15901]  INFO -- : Ending example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:27:24.072016 #15901]  INFO -- : Starting example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:27:24.072067 #15901]  INFO -- : (0.000004s) BEGIN
+I, [2025-03-19T08:27:24.072484 #15901]  INFO -- : (0.000184s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:27:24.072526 #15901]  INFO -- : (0.000019s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:27:24.080511 #15901]  INFO -- : (0.000295s) ROLLBACK
+I, [2025-03-19T08:27:24.080563 #15901]  INFO -- : Ending example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:28:13.294471 #16084]  INFO -- : Starting example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:28:13.294697 #16084]  INFO -- : (0.000010s) BEGIN
+I, [2025-03-19T08:28:13.300215 #16084]  INFO -- : (0.000306s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:28:13.300372 #16084]  INFO -- : (0.000045s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:28:13.304047 #16084]  INFO -- : (0.000030s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Zoo', 15.25, '2017-06-10')
+I, [2025-03-19T08:28:13.304164 #16084]  INFO -- : (0.000036s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:28:13.304344 #16084]  INFO -- : (0.000009s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Whole Foods', 95.2, '2017-06-11')
+I, [2025-03-19T08:28:13.304440 #16084]  INFO -- : (0.000013s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:28:13.305146 #16084]  INFO -- : (0.000430s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:28:13.314828 #16084]  INFO -- : (0.000279s) ROLLBACK
+I, [2025-03-19T08:28:13.314880 #16084]  INFO -- : Ending example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:28:31.215877 #16148]  INFO -- : Starting example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:28:31.215977 #16148]  INFO -- : (0.000019s) BEGIN
+I, [2025-03-19T08:28:31.216334 #16148]  INFO -- : (0.000205s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:28:31.216445 #16148]  INFO -- : (0.000039s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:28:31.217922 #16148]  INFO -- : (0.000133s) SELECT * FROM `expenses`
+I, [2025-03-19T08:28:31.219623 #16148]  INFO -- : (0.000202s) ROLLBACK
+I, [2025-03-19T08:28:31.219650 #16148]  INFO -- : Ending example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:28:31.219797 #16148]  INFO -- : Starting example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:28:31.219892 #16148]  INFO -- : (0.000008s) BEGIN
+I, [2025-03-19T08:28:31.224846 #16148]  INFO -- : (0.000034s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:28:31.224921 #16148]  INFO -- : (0.000009s) ROLLBACK
+I, [2025-03-19T08:28:31.224943 #16148]  INFO -- : Ending example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:28:31.225129 #16148]  INFO -- : Starting example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:28:31.225159 #16148]  INFO -- : (0.000005s) BEGIN
+I, [2025-03-19T08:28:31.225294 #16148]  INFO -- : (0.000020s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:28:31.225336 #16148]  INFO -- : (0.000006s) ROLLBACK
+I, [2025-03-19T08:28:31.225353 #16148]  INFO -- : Ending example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:28:31.225534 #16148]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:28:31.225558 #16148]  INFO -- : (0.000004s) BEGIN
+I, [2025-03-19T08:28:31.225803 #16148]  INFO -- : (0.000167s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:28:31.225867 #16148]  INFO -- : (0.000016s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:28:31.225907 #16148]  INFO -- : (0.000007s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:28:31.225977 #16148]  INFO -- : (0.000010s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:28:31.226013 #16148]  INFO -- : (0.000007s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-11')
+I, [2025-03-19T08:28:31.227796 #16148]  INFO -- : (0.000009s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:28:31.227978 #16148]  INFO -- : (0.000055s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:28:31.229535 #16148]  INFO -- : (0.000279s) ROLLBACK
+I, [2025-03-19T08:28:31.229566 #16148]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:28:31.229680 #16148]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:28:31.229711 #16148]  INFO -- : (0.000007s) BEGIN
+I, [2025-03-19T08:28:31.229929 #16148]  INFO -- : (0.000054s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:28:31.229975 #16148]  INFO -- : (0.000007s) ROLLBACK
+I, [2025-03-19T08:28:31.229998 #16148]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:28:31.239067 #16148]  INFO -- : Starting example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:28:31.239140 #16148]  INFO -- : (0.000018s) BEGIN
+I, [2025-03-19T08:28:31.239581 #16148]  INFO -- : (0.000248s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:28:31.239659 #16148]  INFO -- : (0.000045s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:28:31.240046 #16148]  INFO -- : (0.000010s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Zoo', 15.25, '2017-06-10')
+I, [2025-03-19T08:28:31.240079 #16148]  INFO -- : (0.000014s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:28:31.240224 #16148]  INFO -- : (0.000007s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Whole Foods', 95.2, '2017-06-11')
+I, [2025-03-19T08:28:31.240255 #16148]  INFO -- : (0.000012s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:28:31.240444 #16148]  INFO -- : (0.000045s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:28:31.241099 #16148]  INFO -- : (0.000335s) ROLLBACK
+I, [2025-03-19T08:28:31.241142 #16148]  INFO -- : Ending example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:28:41.462208 #16197]  INFO -- : Starting example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:28:41.462294 #16197]  INFO -- : (0.000012s) BEGIN
+I, [2025-03-19T08:28:41.465598 #16197]  INFO -- : (0.000283s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:28:41.465731 #16197]  INFO -- : (0.000031s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:28:41.466922 #16197]  INFO -- : (0.000130s) SELECT * FROM `expenses`
+I, [2025-03-19T08:28:41.468504 #16197]  INFO -- : (0.000270s) ROLLBACK
+I, [2025-03-19T08:28:41.468546 #16197]  INFO -- : Ending example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:28:41.468798 #16197]  INFO -- : Starting example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:28:41.468888 #16197]  INFO -- : (0.000046s) BEGIN
+I, [2025-03-19T08:28:41.473866 #16197]  INFO -- : (0.000048s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:28:41.473945 #16197]  INFO -- : (0.000009s) ROLLBACK
+I, [2025-03-19T08:28:41.473973 #16197]  INFO -- : Ending example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:28:41.474203 #16197]  INFO -- : Starting example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:28:41.474302 #16197]  INFO -- : (0.000062s) BEGIN
+I, [2025-03-19T08:28:41.474561 #16197]  INFO -- : (0.000028s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:28:41.474607 #16197]  INFO -- : (0.000008s) ROLLBACK
+I, [2025-03-19T08:28:41.474626 #16197]  INFO -- : Ending example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:28:41.474782 #16197]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:28:41.474807 #16197]  INFO -- : (0.000004s) BEGIN
+I, [2025-03-19T08:28:41.475052 #16197]  INFO -- : (0.000161s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:28:41.475117 #16197]  INFO -- : (0.000021s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:28:41.475156 #16197]  INFO -- : (0.000008s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:28:41.475230 #16197]  INFO -- : (0.000013s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:28:41.475268 #16197]  INFO -- : (0.000007s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-11')
+I, [2025-03-19T08:28:41.475307 #16197]  INFO -- : (0.000011s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:28:41.477515 #16197]  INFO -- : (0.000079s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:28:41.478856 #16197]  INFO -- : (0.000363s) ROLLBACK
+I, [2025-03-19T08:28:41.478889 #16197]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:28:41.479041 #16197]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:28:41.479076 #16197]  INFO -- : (0.000006s) BEGIN
+I, [2025-03-19T08:28:41.479375 #16197]  INFO -- : (0.000051s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:28:41.479439 #16197]  INFO -- : (0.000008s) ROLLBACK
+I, [2025-03-19T08:28:41.479460 #16197]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:28:41.487708 #16197]  INFO -- : Starting example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:28:41.487786 #16197]  INFO -- : (0.000018s) BEGIN
+I, [2025-03-19T08:28:41.488166 #16197]  INFO -- : (0.000222s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:28:41.488239 #16197]  INFO -- : (0.000034s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:28:41.488673 #16197]  INFO -- : (0.000009s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Zoo', 15.25, '2017-06-10')
+I, [2025-03-19T08:28:41.488712 #16197]  INFO -- : (0.000013s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:28:41.488847 #16197]  INFO -- : (0.000008s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Whole Foods', 95.2, '2017-06-11')
+I, [2025-03-19T08:28:41.488879 #16197]  INFO -- : (0.000012s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:28:41.489056 #16197]  INFO -- : (0.000042s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:28:41.489597 #16197]  INFO -- : (0.000257s) ROLLBACK
+I, [2025-03-19T08:28:41.489619 #16197]  INFO -- : Ending example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:30:40.244805 #16486]  INFO -- : Starting example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:30:40.245055 #16486]  INFO -- : (0.000022s) BEGIN
+I, [2025-03-19T08:30:40.245472 #16486]  INFO -- : (0.000268s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:30:40.245585 #16486]  INFO -- : (0.000038s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:30:40.246954 #16486]  INFO -- : (0.000222s) SELECT * FROM `expenses`
+I, [2025-03-19T08:30:40.247618 #16486]  INFO -- : (0.000184s) ROLLBACK
+I, [2025-03-19T08:30:40.247645 #16486]  INFO -- : Ending example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:30:40.247781 #16486]  INFO -- : Starting example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:30:40.247936 #16486]  INFO -- : (0.000019s) BEGIN
+I, [2025-03-19T08:30:40.248162 #16486]  INFO -- : (0.000047s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:30:40.248214 #16486]  INFO -- : (0.000007s) ROLLBACK
+I, [2025-03-19T08:30:40.248234 #16486]  INFO -- : Ending example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:30:40.248358 #16486]  INFO -- : Starting example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:30:40.248383 #16486]  INFO -- : (0.000005s) BEGIN
+I, [2025-03-19T08:30:40.254591 #16486]  INFO -- : (0.000025s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:30:40.254631 #16486]  INFO -- : (0.000005s) ROLLBACK
+I, [2025-03-19T08:30:40.254650 #16486]  INFO -- : Ending example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:30:40.254812 #16486]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:30:40.254834 #16486]  INFO -- : (0.000004s) BEGIN
+I, [2025-03-19T08:30:40.254976 #16486]  INFO -- : (0.000032s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:30:40.255014 #16486]  INFO -- : (0.000005s) ROLLBACK
+I, [2025-03-19T08:30:40.255029 #16486]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:30:40.255109 #16486]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:30:40.255136 #16486]  INFO -- : (0.000004s) BEGIN
+I, [2025-03-19T08:30:40.255404 #16486]  INFO -- : (0.000183s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:30:40.255461 #16486]  INFO -- : (0.000017s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:30:40.255500 #16486]  INFO -- : (0.000007s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:30:40.255572 #16486]  INFO -- : (0.000011s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:30:40.255605 #16486]  INFO -- : (0.000007s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-11')
+I, [2025-03-19T08:30:40.255633 #16486]  INFO -- : (0.000010s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:30:40.255695 #16486]  INFO -- : (0.000035s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:30:40.256942 #16486]  INFO -- : (0.000248s) ROLLBACK
+I, [2025-03-19T08:30:40.256990 #16486]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:30:40.257195 #16486]  INFO -- : Starting example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:30:40.257245 #16486]  INFO -- : (0.000011s) BEGIN
+I, [2025-03-19T08:30:40.257841 #16486]  INFO -- : (0.000248s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:30:40.257899 #16486]  INFO -- : (0.000024s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:30:40.258534 #16486]  INFO -- : (0.000027s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Zoo', 15.25, '2017-06-10')
+I, [2025-03-19T08:30:40.258642 #16486]  INFO -- : (0.000041s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:30:40.258818 #16486]  INFO -- : (0.000008s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Whole Foods', 95.2, '2017-06-11')
+I, [2025-03-19T08:30:40.258856 #16486]  INFO -- : (0.000013s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:30:40.259062 #16486]  INFO -- : (0.000045s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:30:40.259623 #16486]  INFO -- : (0.000272s) ROLLBACK
+I, [2025-03-19T08:30:40.259643 #16486]  INFO -- : Ending example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:31:25.558579 #16613]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:31:25.558863 #16613]  INFO -- : (0.000026s) BEGIN
+I, [2025-03-19T08:31:25.559126 #16613]  INFO -- : (0.000087s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:31:25.559195 #16613]  INFO -- : (0.000008s) ROLLBACK
+I, [2025-03-19T08:31:25.559224 #16613]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:31:25.559345 #16613]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:31:25.559374 #16613]  INFO -- : (0.000005s) BEGIN
+I, [2025-03-19T08:31:25.559712 #16613]  INFO -- : (0.000227s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:31:25.559800 #16613]  INFO -- : (0.000024s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:31:25.559845 #16613]  INFO -- : (0.000008s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:31:25.559893 #16613]  INFO -- : (0.000014s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:31:25.559928 #16613]  INFO -- : (0.000006s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-11')
+I, [2025-03-19T08:31:25.560002 #16613]  INFO -- : (0.000012s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:31:25.560234 #16613]  INFO -- : (0.000197s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:31:25.561360 #16613]  INFO -- : (0.000194s) ROLLBACK
+I, [2025-03-19T08:31:25.561389 #16613]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:31:25.561521 #16613]  INFO -- : Starting example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:31:25.561633 #16613]  INFO -- : (0.000040s) BEGIN
+I, [2025-03-19T08:31:25.561978 #16613]  INFO -- : (0.000206s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:31:25.562037 #16613]  INFO -- : (0.000029s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:31:25.563276 #16613]  INFO -- : (0.000042s) SELECT * FROM `expenses`
+I, [2025-03-19T08:31:25.564005 #16613]  INFO -- : (0.000225s) ROLLBACK
+I, [2025-03-19T08:31:25.564028 #16613]  INFO -- : Ending example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:31:25.564171 #16613]  INFO -- : Starting example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:31:25.564203 #16613]  INFO -- : (0.000009s) BEGIN
+I, [2025-03-19T08:31:25.570277 #16613]  INFO -- : (0.000036s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:31:25.570338 #16613]  INFO -- : (0.000008s) ROLLBACK
+I, [2025-03-19T08:31:25.570360 #16613]  INFO -- : Ending example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:31:25.570650 #16613]  INFO -- : Starting example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:31:25.570703 #16613]  INFO -- : (0.000009s) BEGIN
+I, [2025-03-19T08:31:25.570841 #16613]  INFO -- : (0.000039s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:31:25.570884 #16613]  INFO -- : (0.000006s) ROLLBACK
+I, [2025-03-19T08:31:25.570904 #16613]  INFO -- : Ending example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:31:25.594609 #16613]  INFO -- : Starting example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:31:25.594735 #16613]  INFO -- : (0.000022s) BEGIN
+I, [2025-03-19T08:31:25.595261 #16613]  INFO -- : (0.000215s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:31:25.595329 #16613]  INFO -- : (0.000040s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:31:25.595956 #16613]  INFO -- : (0.000010s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Zoo', 15.25, '2017-06-10')
+I, [2025-03-19T08:31:25.595991 #16613]  INFO -- : (0.000015s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:31:25.596130 #16613]  INFO -- : (0.000007s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Whole Foods', 95.2, '2017-06-11')
+I, [2025-03-19T08:31:25.596161 #16613]  INFO -- : (0.000012s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:31:25.596353 #16613]  INFO -- : (0.000045s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:31:25.596853 #16613]  INFO -- : (0.000222s) ROLLBACK
+I, [2025-03-19T08:31:25.596878 #16613]  INFO -- : Ending example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:31:40.672473 #16673]  INFO -- : Starting example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:31:40.672544 #16673]  INFO -- : (0.000009s) BEGIN
+I, [2025-03-19T08:31:40.676876 #16673]  INFO -- : (0.000292s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:31:40.676976 #16673]  INFO -- : (0.000028s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:31:40.679454 #16673]  INFO -- : (0.000018s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Zoo', 15.25, '2017-06-10')
+I, [2025-03-19T08:31:40.681131 #16673]  INFO -- : (0.000023s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:31:40.681323 #16673]  INFO -- : (0.000010s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Whole Foods', 95.2, '2017-06-11')
+I, [2025-03-19T08:31:40.681411 #16673]  INFO -- : (0.000014s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:31:40.681800 #16673]  INFO -- : (0.000137s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:31:40.689288 #16673]  INFO -- : (0.000305s) ROLLBACK
+I, [2025-03-19T08:31:40.689335 #16673]  INFO -- : Ending example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:31:40.705029 #16673]  INFO -- : Starting example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:31:40.705107 #16673]  INFO -- : (0.000014s) BEGIN
+I, [2025-03-19T08:31:40.705497 #16673]  INFO -- : (0.000229s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:31:40.705570 #16673]  INFO -- : (0.000042s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:31:40.706482 #16673]  INFO -- : (0.000036s) SELECT * FROM `expenses`
+I, [2025-03-19T08:31:40.707179 #16673]  INFO -- : (0.000299s) ROLLBACK
+I, [2025-03-19T08:31:40.707212 #16673]  INFO -- : Ending example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:31:40.707377 #16673]  INFO -- : Starting example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:31:40.707415 #16673]  INFO -- : (0.000015s) BEGIN
+I, [2025-03-19T08:31:40.707569 #16673]  INFO -- : (0.000027s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:31:40.707606 #16673]  INFO -- : (0.000006s) ROLLBACK
+I, [2025-03-19T08:31:40.707622 #16673]  INFO -- : Ending example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:31:40.707721 #16673]  INFO -- : Starting example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:31:40.707744 #16673]  INFO -- : (0.000004s) BEGIN
+I, [2025-03-19T08:31:40.707906 #16673]  INFO -- : (0.000017s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:31:40.707953 #16673]  INFO -- : (0.000005s) ROLLBACK
+I, [2025-03-19T08:31:40.707968 #16673]  INFO -- : Ending example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:31:40.708106 #16673]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:31:40.708127 #16673]  INFO -- : (0.000004s) BEGIN
+I, [2025-03-19T08:31:40.708340 #16673]  INFO -- : (0.000147s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:31:40.708377 #16673]  INFO -- : (0.000015s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:31:40.708417 #16673]  INFO -- : (0.000007s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:31:40.708447 #16673]  INFO -- : (0.000011s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:31:40.708483 #16673]  INFO -- : (0.000006s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-11')
+I, [2025-03-19T08:31:40.708513 #16673]  INFO -- : (0.000009s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:31:40.708582 #16673]  INFO -- : (0.000032s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:31:40.711386 #16673]  INFO -- : (0.000361s) ROLLBACK
+I, [2025-03-19T08:31:40.711440 #16673]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:31:40.711574 #16673]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:31:40.711609 #16673]  INFO -- : (0.000006s) BEGIN
+I, [2025-03-19T08:31:40.711791 #16673]  INFO -- : (0.000059s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:31:40.711832 #16673]  INFO -- : (0.000006s) ROLLBACK
+I, [2025-03-19T08:31:40.711849 #16673]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:32:49.684055 #16755]  INFO -- : Starting example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:32:49.684136 #16755]  INFO -- : (0.000010s) BEGIN
+I, [2025-03-19T08:32:49.687497 #16755]  INFO -- : (0.000216s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:32:49.687597 #16755]  INFO -- : (0.000029s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:32:49.688541 #16755]  INFO -- : (0.000114s) SELECT * FROM `expenses`
+I, [2025-03-19T08:32:49.690229 #16755]  INFO -- : (0.000296s) ROLLBACK
+I, [2025-03-19T08:32:49.690272 #16755]  INFO -- : Ending example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:32:49.690516 #16755]  INFO -- : Starting example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:32:49.690547 #16755]  INFO -- : (0.000006s) BEGIN
+I, [2025-03-19T08:32:49.696863 #16755]  INFO -- : (0.000048s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:32:49.696942 #16755]  INFO -- : (0.000010s) ROLLBACK
+I, [2025-03-19T08:32:49.697015 #16755]  INFO -- : Ending example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:32:49.697213 #16755]  INFO -- : Starting example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:32:49.697243 #16755]  INFO -- : (0.000006s) BEGIN
+I, [2025-03-19T08:32:49.697369 #16755]  INFO -- : (0.000020s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:32:49.697403 #16755]  INFO -- : (0.000006s) ROLLBACK
+I, [2025-03-19T08:32:49.697419 #16755]  INFO -- : Ending example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:32:49.697542 #16755]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:32:49.697565 #16755]  INFO -- : (0.000004s) BEGIN
+I, [2025-03-19T08:32:49.697798 #16755]  INFO -- : (0.000157s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:32:49.697856 #16755]  INFO -- : (0.000020s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:32:49.697892 #16755]  INFO -- : (0.000008s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:32:49.697966 #16755]  INFO -- : (0.000011s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:32:49.698003 #16755]  INFO -- : (0.000007s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-11')
+I, [2025-03-19T08:32:49.698031 #16755]  INFO -- : (0.000010s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:32:49.698140 #16755]  INFO -- : (0.000045s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:32:49.699097 #16755]  INFO -- : (0.000250s) ROLLBACK
+I, [2025-03-19T08:32:49.699119 #16755]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:32:49.699201 #16755]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:32:49.699224 #16755]  INFO -- : (0.000004s) BEGIN
+I, [2025-03-19T08:32:49.699456 #16755]  INFO -- : (0.000028s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:32:49.699496 #16755]  INFO -- : (0.000005s) ROLLBACK
+I, [2025-03-19T08:32:49.699510 #16755]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:32:49.715222 #16755]  INFO -- : Starting example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:32:49.715305 #16755]  INFO -- : (0.000018s) BEGIN
+I, [2025-03-19T08:32:49.716628 #16755]  INFO -- : (0.000252s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:32:49.716722 #16755]  INFO -- : (0.000058s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:32:49.717943 #16755]  INFO -- : (0.000011s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Zoo', 15.25, '2017-06-10')
+I, [2025-03-19T08:32:49.717983 #16755]  INFO -- : (0.000014s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:32:49.720715 #16755]  INFO -- : (0.000022s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Whole Foods', 95.2, '2017-06-11')
+I, [2025-03-19T08:32:49.720780 #16755]  INFO -- : (0.000022s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:32:49.721315 #16755]  INFO -- : (0.000048s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:32:49.721943 #16755]  INFO -- : (0.000350s) ROLLBACK
+I, [2025-03-19T08:32:49.721971 #16755]  INFO -- : Ending example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:32:56.348268 #16805]  INFO -- : Starting example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:32:56.348365 #16805]  INFO -- : (0.000017s) BEGIN
+I, [2025-03-19T08:32:56.349558 #16805]  INFO -- : (0.000209s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:32:56.349656 #16805]  INFO -- : (0.000031s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:32:56.351881 #16805]  INFO -- : (0.000012s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Zoo', 15.25, '2017-06-10')
+I, [2025-03-19T08:32:56.351943 #16805]  INFO -- : (0.000016s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:32:56.352087 #16805]  INFO -- : (0.000008s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Whole Foods', 95.2, '2017-06-11')
+I, [2025-03-19T08:32:56.352178 #16805]  INFO -- : (0.000013s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:32:56.352545 #16805]  INFO -- : (0.000121s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:32:56.360100 #16805]  INFO -- : (0.000317s) ROLLBACK
+I, [2025-03-19T08:32:56.360144 #16805]  INFO -- : Ending example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:32:56.383912 #16805]  INFO -- : Starting example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:32:56.384019 #16805]  INFO -- : (0.000028s) BEGIN
+I, [2025-03-19T08:32:56.384361 #16805]  INFO -- : (0.000229s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:32:56.384425 #16805]  INFO -- : (0.000036s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:32:56.385546 #16805]  INFO -- : (0.000064s) SELECT * FROM `expenses`
+I, [2025-03-19T08:32:56.386327 #16805]  INFO -- : (0.000285s) ROLLBACK
+I, [2025-03-19T08:32:56.386354 #16805]  INFO -- : Ending example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:32:56.386729 #16805]  INFO -- : Starting example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:32:56.386784 #16805]  INFO -- : (0.000008s) BEGIN
+I, [2025-03-19T08:32:56.387066 #16805]  INFO -- : (0.000045s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:32:56.387125 #16805]  INFO -- : (0.000008s) ROLLBACK
+I, [2025-03-19T08:32:56.387145 #16805]  INFO -- : Ending example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:32:56.387307 #16805]  INFO -- : Starting example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:32:56.387334 #16805]  INFO -- : (0.000005s) BEGIN
+I, [2025-03-19T08:32:56.387578 #16805]  INFO -- : (0.000023s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:32:56.387616 #16805]  INFO -- : (0.000006s) ROLLBACK
+I, [2025-03-19T08:32:56.387633 #16805]  INFO -- : Ending example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:32:56.387754 #16805]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:32:56.387781 #16805]  INFO -- : (0.000005s) BEGIN
+I, [2025-03-19T08:32:56.387888 #16805]  INFO -- : (0.000030s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:32:56.387922 #16805]  INFO -- : (0.000005s) ROLLBACK
+I, [2025-03-19T08:32:56.387937 #16805]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:32:56.388004 #16805]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:32:56.388028 #16805]  INFO -- : (0.000004s) BEGIN
+I, [2025-03-19T08:32:56.388253 #16805]  INFO -- : (0.000148s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:32:56.388288 #16805]  INFO -- : (0.000015s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:32:56.388324 #16805]  INFO -- : (0.000007s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:32:56.388351 #16805]  INFO -- : (0.000011s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:32:56.388381 #16805]  INFO -- : (0.000006s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-11')
+I, [2025-03-19T08:32:56.388410 #16805]  INFO -- : (0.000009s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:32:56.388467 #16805]  INFO -- : (0.000030s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:32:56.388754 #16805]  INFO -- : (0.000226s) ROLLBACK
+I, [2025-03-19T08:32:56.388780 #16805]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:33:00.479547 #16851]  INFO -- : Starting example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:33:00.479624 #16851]  INFO -- : (0.000010s) BEGIN
+I, [2025-03-19T08:33:00.483106 #16851]  INFO -- : (0.000206s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:33:00.483209 #16851]  INFO -- : (0.000028s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:00.484135 #16851]  INFO -- : (0.000115s) SELECT * FROM `expenses`
+I, [2025-03-19T08:33:00.485755 #16851]  INFO -- : (0.000263s) ROLLBACK
+I, [2025-03-19T08:33:00.485791 #16851]  INFO -- : Ending example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:33:00.486019 #16851]  INFO -- : Starting example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:33:00.486049 #16851]  INFO -- : (0.000005s) BEGIN
+I, [2025-03-19T08:33:00.486435 #16851]  INFO -- : (0.000029s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:00.486475 #16851]  INFO -- : (0.000006s) ROLLBACK
+I, [2025-03-19T08:33:00.486493 #16851]  INFO -- : Ending example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:33:00.486694 #16851]  INFO -- : Starting example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:33:00.486799 #16851]  INFO -- : (0.000019s) BEGIN
+I, [2025-03-19T08:33:00.493514 #16851]  INFO -- : (0.000041s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:00.493605 #16851]  INFO -- : (0.000011s) ROLLBACK
+I, [2025-03-19T08:33:00.493627 #16851]  INFO -- : Ending example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:33:00.493823 #16851]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:33:00.493851 #16851]  INFO -- : (0.000005s) BEGIN
+I, [2025-03-19T08:33:00.494116 #16851]  INFO -- : (0.000166s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:33:00.494190 #16851]  INFO -- : (0.000031s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:00.494230 #16851]  INFO -- : (0.000008s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:33:00.494303 #16851]  INFO -- : (0.000012s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:00.494337 #16851]  INFO -- : (0.000007s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-11')
+I, [2025-03-19T08:33:00.494366 #16851]  INFO -- : (0.000010s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:00.494475 #16851]  INFO -- : (0.000049s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:33:00.495391 #16851]  INFO -- : (0.000237s) ROLLBACK
+I, [2025-03-19T08:33:00.495417 #16851]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:33:00.495498 #16851]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:33:00.495528 #16851]  INFO -- : (0.000004s) BEGIN
+I, [2025-03-19T08:33:00.495640 #16851]  INFO -- : (0.000027s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:33:00.495676 #16851]  INFO -- : (0.000005s) ROLLBACK
+I, [2025-03-19T08:33:00.495693 #16851]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:33:00.520733 #16851]  INFO -- : Starting example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:33:00.520825 #16851]  INFO -- : (0.000016s) BEGIN
+I, [2025-03-19T08:33:00.521150 #16851]  INFO -- : (0.000184s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:33:00.521209 #16851]  INFO -- : (0.000036s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:00.521745 #16851]  INFO -- : (0.000009s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Zoo', 15.25, '2017-06-10')
+I, [2025-03-19T08:33:00.521779 #16851]  INFO -- : (0.000014s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:00.521910 #16851]  INFO -- : (0.000008s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Whole Foods', 95.2, '2017-06-11')
+I, [2025-03-19T08:33:00.521945 #16851]  INFO -- : (0.000012s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:00.522117 #16851]  INFO -- : (0.000042s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:33:00.522672 #16851]  INFO -- : (0.000301s) ROLLBACK
+I, [2025-03-19T08:33:00.522704 #16851]  INFO -- : Ending example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:33:13.088655 #16910]  INFO -- : Starting example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:33:13.088763 #16910]  INFO -- : (0.000018s) BEGIN
+I, [2025-03-19T08:33:13.089346 #16910]  INFO -- : (0.000361s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:33:13.089507 #16910]  INFO -- : (0.000044s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:13.090364 #16910]  INFO -- : (0.000028s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Zoo', 15.25, '2017-06-10')
+I, [2025-03-19T08:33:13.090431 #16910]  INFO -- : (0.000016s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:13.090610 #16910]  INFO -- : (0.000008s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Whole Foods', 95.2, '2017-06-11')
+I, [2025-03-19T08:33:13.090692 #16910]  INFO -- : (0.000012s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:13.091018 #16910]  INFO -- : (0.000149s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:33:13.096976 #16910]  INFO -- : (0.000294s) ROLLBACK
+I, [2025-03-19T08:33:13.097021 #16910]  INFO -- : Ending example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:33:13.114952 #16910]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:33:13.115040 #16910]  INFO -- : (0.000018s) BEGIN
+I, [2025-03-19T08:33:13.115402 #16910]  INFO -- : (0.000210s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:33:13.115470 #16910]  INFO -- : (0.000038s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:13.115527 #16910]  INFO -- : (0.000008s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:33:13.115563 #16910]  INFO -- : (0.000011s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:13.115603 #16910]  INFO -- : (0.000006s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-11')
+I, [2025-03-19T08:33:13.115632 #16910]  INFO -- : (0.000010s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:13.115722 #16910]  INFO -- : (0.000044s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:33:13.116143 #16910]  INFO -- : (0.000293s) ROLLBACK
+I, [2025-03-19T08:33:13.116171 #16910]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:33:13.116409 #16910]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:33:13.116435 #16910]  INFO -- : (0.000005s) BEGIN
+I, [2025-03-19T08:33:13.116541 #16910]  INFO -- : (0.000025s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:33:13.116591 #16910]  INFO -- : (0.000005s) ROLLBACK
+I, [2025-03-19T08:33:13.116607 #16910]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:33:13.116715 #16910]  INFO -- : Starting example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:33:13.116746 #16910]  INFO -- : (0.000004s) BEGIN
+I, [2025-03-19T08:33:13.116936 #16910]  INFO -- : (0.000121s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:33:13.116965 #16910]  INFO -- : (0.000012s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:13.117865 #16910]  INFO -- : (0.000027s) SELECT * FROM `expenses`
+I, [2025-03-19T08:33:13.118466 #16910]  INFO -- : (0.000216s) ROLLBACK
+I, [2025-03-19T08:33:13.118494 #16910]  INFO -- : Ending example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:33:13.118651 #16910]  INFO -- : Starting example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:33:13.118718 #16910]  INFO -- : (0.000008s) BEGIN
+I, [2025-03-19T08:33:13.118924 #16910]  INFO -- : (0.000038s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:13.118981 #16910]  INFO -- : (0.000007s) ROLLBACK
+I, [2025-03-19T08:33:13.119002 #16910]  INFO -- : Ending example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:33:13.119196 #16910]  INFO -- : Starting example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:33:13.119284 #16910]  INFO -- : (0.000015s) BEGIN
+I, [2025-03-19T08:33:13.119709 #16910]  INFO -- : (0.000033s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:13.119765 #16910]  INFO -- : (0.000006s) ROLLBACK
+I, [2025-03-19T08:33:13.119783 #16910]  INFO -- : Ending example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:33:20.615391 #16962]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:33:20.615480 #16962]  INFO -- : (0.000009s) BEGIN
+I, [2025-03-19T08:33:20.618426 #16962]  INFO -- : (0.000174s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:33:20.618501 #16962]  INFO -- : (0.000020s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:20.618569 #16962]  INFO -- : (0.000028s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:33:20.618653 #16962]  INFO -- : (0.000020s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:20.618864 #16962]  INFO -- : (0.000036s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-11')
+I, [2025-03-19T08:33:20.619037 #16962]  INFO -- : (0.000035s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:20.619246 #16962]  INFO -- : (0.000141s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:33:20.621650 #16962]  INFO -- : (0.000322s) ROLLBACK
+I, [2025-03-19T08:33:20.621697 #16962]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:33:20.621905 #16962]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:33:20.621950 #16962]  INFO -- : (0.000008s) BEGIN
+I, [2025-03-19T08:33:20.622114 #16962]  INFO -- : (0.000049s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:33:20.622629 #16962]  INFO -- : (0.000009s) ROLLBACK
+I, [2025-03-19T08:33:20.622658 #16962]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:33:20.622800 #16962]  INFO -- : Starting example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:33:20.622829 #16962]  INFO -- : (0.000006s) BEGIN
+I, [2025-03-19T08:33:20.623089 #16962]  INFO -- : (0.000166s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:33:20.623135 #16962]  INFO -- : (0.000022s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:20.624058 #16962]  INFO -- : (0.000035s) SELECT * FROM `expenses`
+I, [2025-03-19T08:33:20.624689 #16962]  INFO -- : (0.000230s) ROLLBACK
+I, [2025-03-19T08:33:20.624712 #16962]  INFO -- : Ending example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:33:20.624861 #16962]  INFO -- : Starting example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:33:20.624890 #16962]  INFO -- : (0.000006s) BEGIN
+I, [2025-03-19T08:33:20.632292 #16962]  INFO -- : (0.000061s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:20.632392 #16962]  INFO -- : (0.000009s) ROLLBACK
+I, [2025-03-19T08:33:20.632414 #16962]  INFO -- : Ending example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:33:20.632660 #16962]  INFO -- : Starting example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:33:20.632710 #16962]  INFO -- : (0.000008s) BEGIN
+I, [2025-03-19T08:33:20.633010 #16962]  INFO -- : (0.000031s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:20.633054 #16962]  INFO -- : (0.000007s) ROLLBACK
+I, [2025-03-19T08:33:20.633072 #16962]  INFO -- : Ending example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:33:20.659013 #16962]  INFO -- : Starting example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:33:20.659104 #16962]  INFO -- : (0.000019s) BEGIN
+I, [2025-03-19T08:33:20.659459 #16962]  INFO -- : (0.000197s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:33:20.659523 #16962]  INFO -- : (0.000037s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:20.659896 #16962]  INFO -- : (0.000009s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Zoo', 15.25, '2017-06-10')
+I, [2025-03-19T08:33:20.660099 #16962]  INFO -- : (0.000014s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:20.660235 #16962]  INFO -- : (0.000008s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Whole Foods', 95.2, '2017-06-11')
+I, [2025-03-19T08:33:20.660267 #16962]  INFO -- : (0.000013s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:20.660440 #16962]  INFO -- : (0.000040s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:33:20.660922 #16962]  INFO -- : (0.000241s) ROLLBACK
+I, [2025-03-19T08:33:20.660945 #16962]  INFO -- : Ending example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:33:59.690280 #17058]  INFO -- : Starting example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:33:59.690407 #17058]  INFO -- : (0.000027s) BEGIN
+I, [2025-03-19T08:33:59.692446 #17058]  INFO -- : (0.000282s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:33:59.692551 #17058]  INFO -- : (0.000041s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:59.695473 #17058]  INFO -- : (0.000035s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Zoo', 15.25, '2017-06-10')
+I, [2025-03-19T08:33:59.695600 #17058]  INFO -- : (0.000029s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:59.695792 #17058]  INFO -- : (0.000010s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Whole Foods', 95.2, '2017-06-11')
+I, [2025-03-19T08:33:59.695901 #17058]  INFO -- : (0.000014s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:59.696676 #17058]  INFO -- : (0.000152s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:33:59.702428 #17058]  INFO -- : (0.000398s) ROLLBACK
+I, [2025-03-19T08:33:59.702480 #17058]  INFO -- : Ending example: Expense Tracker API records submitted expenses
+I, [2025-03-19T08:33:59.703632 #17058]  INFO -- : Starting example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:33:59.703718 #17058]  INFO -- : (0.000015s) BEGIN
+I, [2025-03-19T08:33:59.704058 #17058]  INFO -- : (0.000202s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:33:59.704114 #17058]  INFO -- : (0.000027s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:59.705207 #17058]  INFO -- : (0.000051s) SELECT * FROM `expenses`
+I, [2025-03-19T08:33:59.705876 #17058]  INFO -- : (0.000213s) ROLLBACK
+I, [2025-03-19T08:33:59.705901 #17058]  INFO -- : Ending example: ExpenseTracker::Ledger#record successfully saves an expense in the DB
+I, [2025-03-19T08:33:59.706034 #17058]  INFO -- : Starting example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:33:59.706064 #17058]  INFO -- : (0.000005s) BEGIN
+I, [2025-03-19T08:33:59.706217 #17058]  INFO -- : (0.000030s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:59.706253 #17058]  INFO -- : (0.000005s) ROLLBACK
+I, [2025-03-19T08:33:59.706270 #17058]  INFO -- : Ending example: ExpenseTracker::Ledger#record when multiple keys are missing rejects the expense as invalid
+I, [2025-03-19T08:33:59.706372 #17058]  INFO -- : Starting example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:33:59.706395 #17058]  INFO -- : (0.000005s) BEGIN
+I, [2025-03-19T08:33:59.706552 #17058]  INFO -- : (0.000018s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:59.706585 #17058]  INFO -- : (0.000005s) ROLLBACK
+I, [2025-03-19T08:33:59.706601 #17058]  INFO -- : Ending example: ExpenseTracker::Ledger#record when one of the keys is missing rejects the expense as invalid
+I, [2025-03-19T08:33:59.706715 #17058]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:33:59.706738 #17058]  INFO -- : (0.000004s) BEGIN
+I, [2025-03-19T08:33:59.706845 #17058]  INFO -- : (0.000026s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:33:59.706877 #17058]  INFO -- : (0.000005s) ROLLBACK
+I, [2025-03-19T08:33:59.706892 #17058]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns a blank array when there are no matching expenses
+I, [2025-03-19T08:33:59.706954 #17058]  INFO -- : Starting example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date
+I, [2025-03-19T08:33:59.706975 #17058]  INFO -- : (0.000003s) BEGIN
+I, [2025-03-19T08:33:59.707169 #17058]  INFO -- : (0.000128s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:33:59.707206 #17058]  INFO -- : (0.000015s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:59.707248 #17058]  INFO -- : (0.000007s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2025-03-19T08:33:59.707276 #17058]  INFO -- : (0.000010s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:59.707312 #17058]  INFO -- : (0.000006s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-11')
+I, [2025-03-19T08:33:59.707340 #17058]  INFO -- : (0.000009s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2025-03-19T08:33:59.707400 #17058]  INFO -- : (0.000029s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2025-03-19T08:33:59.707658 #17058]  INFO -- : (0.000188s) ROLLBACK
+I, [2025-03-19T08:33:59.707678 #17058]  INFO -- : Ending example: ExpenseTracker::Ledger#expenses_on returns all expenses for the provided date

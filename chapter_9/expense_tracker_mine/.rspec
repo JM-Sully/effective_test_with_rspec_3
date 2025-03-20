@@ -1,0 +1,3 @@
+--require spec_helper
+--require ./spec/support/fail_if_slower_than_formatter.rb
+--format FailIfSlowerThanFormatter
