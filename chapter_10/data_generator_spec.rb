@@ -46,7 +46,7 @@ RSpec.describe DataGenerator do
   def be_a_boolean
     # Ruby has no Boolean class so this doesn't work.
     # Is there a way we can use `or` to combine two matchers instead?
-    be_a(Boolean)
+    eq(true) | eq(false)
   end
 
   it "generates boolean values" do
@@ -57,7 +57,7 @@ RSpec.describe DataGenerator do
   def be_a_date_before_2000
     # Combine the `be_a(klass)` matcher with the `be < value` matcher
     # to create a matcher that matches dates before January 1st, 2000.
-    fill_me_in
+    be_a(Date) && be < Date.new(2000, 1, 1)
   end
 
   it "generates dates before January 1st, 2000" do
@@ -68,7 +68,7 @@ RSpec.describe DataGenerator do
   def be_an_email_address
     # Pass a simple regex to `match` to define a matcher for email addresses.
     # Don't worry about complete email validation; something very simple is fine.
-    match(/some regex/)
+    match(/\A[^@\s]+@[^@\s]+\.[^@\s]+\z/)
   end
 
   it "generates email addresses" do
@@ -79,7 +79,13 @@ RSpec.describe DataGenerator do
   def match_the_shape_of_a_user_record
     # Use `be_a_boolean`, `be_a_date_before_2000` and `be_an_email_address`
     # in the hash passed to `match` below to define this matcher.
-    match(fill_this_in: "with a hash describing the shape of the data")
+    match(
+      {
+        email_address: be_an_email_address,
+        date_of_birth: be_a_date_before_2000,
+        active:        be_a_boolean
+      }
+    )
   end
 
   it "generates user records" do
@@ -89,7 +95,7 @@ RSpec.describe DataGenerator do
 
   def all_match_the_shape_of_a_user_record
     # Combine the `all` matcher and `match_the_shape_of_a_user_record` here.
-    fill_me_in
+    all(match_the_shape_of_a_user_record)
   end
 
   it "generates a list of user records" do
