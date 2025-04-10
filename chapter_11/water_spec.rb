@@ -6,6 +6,6 @@ end
 
 RSpec.describe Water do
   it 'is H2O' do
-    expect(Water.elements.sort).to eq [:hydrogen, :hydrogen, :oxygen]
+    expect(Water.elements).to contain_exactly(:hydrogen, :hydrogen, :oxygen)
   end
 end
