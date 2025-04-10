@@ -12,17 +12,17 @@ RSpec.describe PublicCompany do
   let(:company) { PublicCompany.new('Nile', 10, 100_000) }
 
   it 'increases its market cap when it gets better than expected revenues' do
-    before_market_cap = company.market_cap
-    company.got_better_than_expected_revenues
-    after_market_cap = company.market_cap
-
-    expect(after_market_cap - before_market_cap).to be >= 50_000
+    expect do
+      company.got_better_than_expected_revenues
+    end.to change { company.market_cap }.by_at_least(50_000)
   end
 
   it 'provides attributes' do
-    expect(company.name).to eq('Nil')
-    expect(company.value_per_share).to eq(10)
-    expect(company.share_count).to eq(10_000)
-    expect(company.market_cap).to eq(1_000_000)
+    expect(company).to have_attributes(
+      name: 'Nil',
+      value_per_share: 10,
+      share_count: 10_000,
+      market_cap: 1_000_000
+    )
   end
 end
