@@ -10,6 +10,6 @@ RSpec.describe Calendar do
   let(:sunday_date) { Calendar.new('Sun, 11 Jun 2017') }
 
   it 'considers sundays to be on the weekend' do
-    expect(sunday_date.on_weekend?).to be true
+    expect(sunday_date.on_weekend?).to be_on_weekend
   end
 end
