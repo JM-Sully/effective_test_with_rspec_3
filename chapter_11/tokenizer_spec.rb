@@ -15,6 +15,6 @@ RSpec.describe Tokenizer do
 
   it 'tokenizes multiple lines of text' do
     tokenized = Tokenizer.tokenize(text)
-    expect(tokenized.first(6)).to eq ['I', 'am', 'Sam.', 'Sam', 'I', 'am']
+    expect(tokenized).to start_with(["I", "am", "Sam.", "Sam", "I", "am"])
   end
 end
