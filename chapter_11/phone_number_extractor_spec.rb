@@ -15,15 +15,12 @@ RSpec.describe PhoneNumberExtractor do
   end
 
   it 'yields phone numbers as it finds them' do
-    yielded_numbers = []
-    PhoneNumberExtractor.extract_from(text) do |number|
-      yielded_numbers << number
-    end
-
-    expect(yielded_numbers).to eq [
+    expect do |block|
+      PhoneNumberExtractor.extract_from(text, &block)
+    end.to yield_successive_args(
       '(202) 555-0168',
       '202-555-0199',
       '(202) 555-0175'
-    ]
+    )
   end
 end
