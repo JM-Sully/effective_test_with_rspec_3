@@ -3,7 +3,7 @@ RSpec.describe "Block implementations that provide responses" do
 
   it "can return a value" do
     allow(test_double).to receive(:message) do
-      # TODO
+      17
     end
 
     expect(test_double.message).to eq(17)
@@ -11,7 +11,7 @@ RSpec.describe "Block implementations that provide responses" do
 
   it "can raise an error" do
     allow(test_double).to receive(:message) do
-      # TODO
+      raise(StandardError, 'boom')
     end
 
     expect { test_double.message }.to raise_error(/boom/)
@@ -19,7 +19,7 @@ RSpec.describe "Block implementations that provide responses" do
 
   it "can yield a value" do
     allow(test_double).to receive(:message) do |&block|
-      # TODO
+      block.call(1)
     end
 
     expect { |b| test_double.message(&b) }.to yield_with_args(1)
@@ -27,7 +27,7 @@ RSpec.describe "Block implementations that provide responses" do
 
   it "can throw a symbol" do
     allow(test_double).to receive(:message) do
-      # TODO
+      throw :foo
     end
 
     expect { test_double.message }.to throw_symbol(:foo)
@@ -39,7 +39,7 @@ RSpec.describe "Block implementations that check calls" do
 
   it "can constrain arguments" do
     allow(test_double).to receive(:message) do |arg|
-      # TODO
+      raise('invalid_arg') if arg == :invalid_arg
     end
 
     expect { test_double.message(:valid_arg) }.not_to raise_error
@@ -50,7 +50,7 @@ RSpec.describe "Block implementations that check calls" do
     receive_count = 0
 
     allow(test_double).to receive(:message) do |&block|
-      # TODO
+      receive_count += 1
     end
 
     test_double.message
@@ -63,11 +63,11 @@ RSpec.describe "Block implementations that check calls" do
     sequence = []
 
     allow(test_double).to receive(:message_1) do
-      # TODO
+      sequence << :message_1
     end
 
     allow(test_double).to receive(:message_2) do
-      # TODO
+      sequence << :message_2
     end
 
     test_double.message_1
